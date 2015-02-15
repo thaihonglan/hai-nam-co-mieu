@@ -24,7 +24,7 @@ use yii\widgets\LinkPager;
 //                     echo '<img src=' . $path . $noticedetail->avatar . ' width="240">';
 //                 else
 //                     echo '<img src=' . $path . $noticedetail->avatar . ' height="180">';
-                echo $noticedetail->content;
+                echo mb_substr($noticedetail->content,15,500,'UTF-8');
                 ?>
 			</p>
 			<p style="text-align: right">
