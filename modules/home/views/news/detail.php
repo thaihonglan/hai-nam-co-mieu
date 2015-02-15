@@ -32,7 +32,7 @@ $model->save();
 			     else echo '<img src=' . $path . $newsdetail->avatar . ' width="480">';
 			 ?>
 			</p>
-			<p>&nbsp;</p>
+<!-- 			<p>&nbsp;</p> -->
 			<p><?php echo $newsdetail->content; ?></p>
 
 

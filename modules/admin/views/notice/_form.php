@@ -44,7 +44,7 @@ tinymce.init({
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => 255]) ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'content')->textarea(['rows' => 15]) ?>
 
     <?= $form->field($model, 'disable')->checkbox(array('checked'=>false,'value'=>0)) ?>
 
