@@ -28,7 +28,6 @@ $model->save();
 
 			<h1><?php echo $noticedetail->title; ?></h1>
 
-			<p>&nbsp;</p>
 			<p><?php echo $noticedetail->content; ?></p>
 
 			
