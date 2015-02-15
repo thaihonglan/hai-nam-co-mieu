@@ -19,7 +19,7 @@ use yii\widgets\LinkPager;
 <!-- LEFT COL -->
 		<div id="templatemo_left">
          <?php foreach ($models as $newsdetail): ?>
-			<a href="<?php echo 'home/news/detail?pid='.$newsdetail->id ?>">
+			<a href="<?php echo '/home/news/detail?pid='.$newsdetail->id ?>">
 				<h2><?php echo $newsdetail->title; ?></h2>
 			</a>
 			<p><?php $path = '/../images/avatar/';
@@ -31,7 +31,7 @@ use yii\widgets\LinkPager;
 			    ?>
 			</p>
 			<p style="text-align: right">
-				<a href="<?php echo 'home/news/detail?pid='.$newsdetail->id ?>"><em>Chi
+				<a href="<?php echo '/home/news/detail?pid='.$newsdetail->id ?>"><em>Chi
 						tiết</em></a>
 			</p>
          <?php endforeach; ?>
@@ -43,22 +43,22 @@ use yii\widgets\LinkPager;
 		<div id="templatemo_right">
 		
 		<!-- Last Notice Begin -->
-		      <a href="<?php echo 'home/notice/detail?pid='.$last_notice->id ?>">
+		      <a href="<?php echo '/home/notice/detail?pid='.$last_notice->id ?>">
 				<h4><?php echo $last_notice->title; ?></h4>
 			</a>
 			<p><?php echo mb_substr($last_notice->content,15,1000,'UTF-8'); ?></p>
 			<p style="text-align: right">
-				<a href="<?php echo 'home/notice/detail?pid='.$last_notice->id ?>"><em>Chi
+				<a href="<?php echo '/home/notice/detail?pid='.$last_notice->id ?>"><em>Chi
 						tiết</em></a>
 			</p>
         <!-- Last Notice End -->
             <?php foreach ($notices as $noticedetail): ?>
-			<a href="<?php echo 'home/notice/detail?pid='.$noticedetail->id ?>">
+			<a href="<?php echo '/home/notice/detail?pid='.$noticedetail->id ?>">
 				<h4><?php echo $noticedetail->title; ?></h4>
 			</a>
 			<p><?php echo mb_substr($noticedetail->content,15,300,'UTF-8'); ?></p>
 			<p style="text-align: right">
-				<a href="<?php echo 'home/notice/detail?pid='.$noticedetail->id ?>"><em>Chi
+				<a href="<?php echo '/home/notice/detail?pid='.$noticedetail->id ?>"><em>Chi
 						tiết</em></a>
 			</p>
             <?php endforeach; ?>

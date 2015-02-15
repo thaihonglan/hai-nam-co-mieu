@@ -27,7 +27,7 @@ use yii\widgets\LinkPager;
                 ?>
 			</p>
 			<p style="text-align: right">
-				<a href="<?php echo 'home/news/detail?pid='.$newsdetail->id ?>"><em>Chi
+				<a href="<?php echo '/home/news/detail?pid='.$newsdetail->id ?>"><em>Chi
 						tiết</em></a>
 			</p>
             <?php endforeach; ?>
@@ -38,14 +38,25 @@ use yii\widgets\LinkPager;
             ?>
 		</div>
 
+        <!-- RIGHT COL -->
+		<div id="templatemo_right">
 
+			<h1>Danh mục</h1>
+			<?php foreach ($catelist as $list): ?>
+			<p><a href="<?php echo '/home/news/list?cid='.$list->id ?>"><?php echo $list->name; ?></a></p>
+			<?php endforeach; ?>
+			
+			<p>&nbsp;</p>
+			
+			<h3>Liên lạc</h3>
+			<p>Địa chỉ liên lạc（聯絡地址）:</p>
 
-
-
-
-
-
-
-
+			<p>
+				Hiệu buôn <strong>Bình Nguyên</strong>, số 15 đường Lý Văn Lâm, K4,
+				P1, Cà Mau.<br /> 平原商店，金甌第一坊李文林街15號
+			</p>
+			
+		</div>
+		
 	</div>
 </div>
