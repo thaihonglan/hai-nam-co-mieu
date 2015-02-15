@@ -15,7 +15,8 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <link href="/css/home_style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/js/slideshow-transition-builder-controller.min.js"></script>
+<script type="text/javascript" src="/js/slide/slideshow-transition-builder-controller.min.js"></script>
+<!-- <script type="text/javascript" src="/js/slide/jssor.slider.js"></script> -->
 <!-- <script type="text/javascript" src="/plugins/jquery-ui/jquery-ui.min.js"></script> -->
 
 
@@ -32,7 +33,7 @@ AppAsset::register($this);
 <!--     <div class="wrap"> -->
 	<div id="templatemo_header">
         <div style="position: relative; width: 800px; height: 170px;" id="slider1_container">
-        <div u="slides" style="cursor: move; position: absolute; width: 800px; height: 170px;top:0px;left:0px;overflow:hidden;">
+        <div u="slides" t="FADE" t2="B" d=-50 style="cursor: move; position: absolute; width: 800px; height: 170px;top:0px;left:0px;overflow:hidden;">
             <div><img u="image" src="/images/home/banner_01.jpg" width="800" height="170"></div>
             <div><img u="image" src="/images/home/banner_02.jpg" width="800" height="170"></div>
             <div><img u="image" src="/images/home/banner_03.png" width="800" height="170"></div>
@@ -51,8 +52,11 @@ AppAsset::register($this);
     <script>
         slideshow_transition_controller_starter("slider1_container");
         jQuery(document).ready(function ($) {
-            var options = { $SlideDuration: 2000 };
+            var options = { $AutoPlay: true,
+          		  $SlideDuration: 2000 
+                  };
             var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+            
         });
     </script>
 <!-- 		<div id="templatemo_header_upper">Hải Nam Cổ Miếu - Cà Mau</div> -->
