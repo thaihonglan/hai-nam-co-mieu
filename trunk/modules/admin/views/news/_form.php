@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use app\models\Category;
+use app\models\Lang;
 use dosamigos\fileupload\FileUploadUI;
 use dosamigos\fileupload\FileUpload;
 use dosamigos\fileinput\FileInput;
@@ -16,7 +17,7 @@ use dosamigos\fileinput\FileInput;
 <link rel="stylesheet" type="text/css" href="/js/fancybox/source/jquery.fancybox.css" media="screen" />
 <script type="text/javascript" src="/js/fancybox/source/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="/js/tinymce/tinymce.min.js"></script>
-<a href="/js/tinymce/plugins/filemanager/dialog.php?type=1&editor=mce_0&lang=eng&fldr=" class="btn iframe-btn" type="button">Open Filemanager</a>
+<!-- <a href="/js/tinymce/plugins/filemanager/dialog.php?type=1&editor=mce_0&lang=eng&fldr=" class="btn iframe-btn" type="button">Open Filemanager</a> -->
 <script type="text/javascript">
 tinymce.init({
 	mode : "textareas",
@@ -81,8 +82,17 @@ function OnMessage(e){
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
 <!-- <?= $form->field($model, 'user_id')->textInput(['maxlength' => 11]) ?> -->
-
+ 
     <?= $form->field($model, 'title')->textInput(['maxlength' => 255]) ?>
+    
+    <div class="form-group field-news-title">
+		<label class="control-label" for="news-title">Ngôn ngữ</label>
+		<p>
+    <?= Html::activeDropDownList($model, 'lang_id', ArrayHelper::map(Lang::find()->all(), 'id', 'name')) ?>
+        </p>
+		<div class="help-block"></div>
+	</div>
+
     
     <div class="form-group field-news-title">
 		<label class="control-label" for="news-title">Danh mục</label>

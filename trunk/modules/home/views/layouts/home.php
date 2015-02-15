@@ -69,7 +69,7 @@ AppAsset::register($this);
 			<li><a href="/">Trang chủ</a></li>
 			<li><a href="/news">Tin tức</a></li>
 			<li><a href="/notice">Thông báo</a></li>
-			<li><a href="/photo">Hình ảnh</a></li>
+<!-- 			<li><a href="/photo">Hình ảnh</a></li> -->
 			<li><a href="#">Hội quán</a></li>
 			<li><a href="/site/contact">Liên hệ</a></li>
 		</ul>

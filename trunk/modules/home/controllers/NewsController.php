@@ -38,9 +38,25 @@ class NewsController extends \yii\web\Controller
     {   
         $catelist = Category::find()->all();
         
+        $pagelimit = 10;
+        
+        $max_id_news = News::find()->select('max(id)')->scalar();
+        
+        $query = News::find()->where(['disable' => 0, 'category_id' => $cid]);
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count()]);
+        $pages->setPageSize($pagelimit);
+        $models = $query->offset($pages->offset)
+        ->orderBy(['id' => SORT_DESC])
+        ->limit($pages->limit)
+        ->all();
+        
         return $this->render('list',[
             'catelist' => $catelist,
             'cid' => $cid,
+            'max_id_news' => $max_id_news,
+            'models' => $models,
+            'pages' => $pages,
         ]);
     }
     

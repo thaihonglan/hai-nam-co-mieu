@@ -35,14 +35,10 @@ $model->save();
 			<p>&nbsp;</p>
 			<p><?php echo $newsdetail->content; ?></p>
 
-			<h2>Ý kiến bạn đọc</h2>
-			<p>
-				Đang làm, chưa xong.
-			</p>
 
 			<h2>Những bài cùng danh mục :</h2>
 			<?php foreach ($similar as $similars): ?>
-			<p> <a href="<?php echo 'home/news/detail?pid='.$similars->id ?>"><em>
+			<p> <a href="<?php echo '/home/news/detail?pid='.$similars->id ?>"><em>
 			         <?php echo $similars->title; ?></em></a>  <em>(<?php echo $similars->create_date ?>)</em></p>
 			<?php endforeach; ?>
 			
@@ -53,7 +49,7 @@ $model->save();
 
 			<h1>Danh mục</h1>
 			<?php foreach ($catelist as $list): ?>
-			<p><b><?php echo $list->name; ?></b></p>
+			<p><a href="<?php echo '/home/news/list?cid='.$list->id ?>"><?php echo $list->name; ?></a></p>
 			<?php endforeach; ?>
 			
 		</div>
